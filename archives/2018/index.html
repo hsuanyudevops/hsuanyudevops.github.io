@@ -202,7 +202,56 @@
             </div>
             
                 <div class="postShorten-content">
-                    
+                    <h1 id="Linux-新增、掛載硬碟"><a href="#Linux-新增、掛載硬碟" class="headerlink" title="Linux 新增、掛載硬碟"></a>Linux 新增、掛載硬碟</h1><h2 id="一、新增磁碟"><a href="#一、新增磁碟" class="headerlink" title="一、新增磁碟"></a>一、新增磁碟</h2><h3 id="1-顯示目前主機上的硬碟"><a href="#1-顯示目前主機上的硬碟" class="headerlink" title="1. 顯示目前主機上的硬碟"></a>1. 顯示目前主機上的硬碟</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ls /dev/[sh]d*</span><br></pre></td></tr></table></figure>
+<img src="/2018/06/19/test11/1.JPG" title="step1">
+<h3 id="2-確認所新增的硬碟資訊"><a href="#2-確認所新增的硬碟資訊" class="headerlink" title="2. 確認所新增的硬碟資訊"></a>2. 確認所新增的硬碟資訊<br></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fdisk -l /dev/sdb</span><br></pre></td></tr></table></figure>
+<p><img src="image/2.JPG" alt="step2"></p>
+<h3 id="3-對sdb磁碟進行分割，再輸入”m”獲得說明"><a href="#3-對sdb磁碟進行分割，再輸入”m”獲得說明" class="headerlink" title="3. 對sdb磁碟進行分割，再輸入”m”獲得說明"></a>3. 對sdb磁碟進行分割，再輸入”m”獲得說明<br></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fdisk /dev/sdb</span><br></pre></td></tr></table></figure>
+<p><img src="image/3.JPG" alt="step3"></p>
+<h3 id="4-輸入”n”新增分割區，再輸入”p”-硬碟全部只要一個分割區"><a href="#4-輸入”n”新增分割區，再輸入”p”-硬碟全部只要一個分割區" class="headerlink" title="4. 輸入”n”新增分割區，再輸入”p” (硬碟全部只要一個分割區) "></a>4. 輸入”n”新增分割區，再輸入”p” (硬碟全部只要一個分割區) <br></h3><p><img src="image/4.JPG" alt="step4"></p>
+<h3 id="5-輸入”1”-磁碟代號-，按-Enter-起始磁區使用預設值-，在按-Enter-最後磁區使用預設值"><a href="#5-輸入”1”-磁碟代號-，按-Enter-起始磁區使用預設值-，在按-Enter-最後磁區使用預設值" class="headerlink" title="5. 輸入”1”(磁碟代號)，按 Enter (起始磁區使用預設值)，在按 Enter (最後磁區使用預設值)"></a>5. 輸入”1”(磁碟代號)，按 Enter (起始磁區使用預設值)，在按 Enter (最後磁區使用預設值)<br></h3><p><img src="image/5.JPG" alt="step5"></p>
+<h3 id="6-輸入”w”-將分割表寫入磁碟後離開"><a href="#6-輸入”w”-將分割表寫入磁碟後離開" class="headerlink" title="6. 輸入”w” (將分割表寫入磁碟後離開)"></a>6. 輸入”w” (將分割表寫入磁碟後離開)<br></h3><p><img src="image/6.JPG" alt="step6"></p>
+<h3 id="7-對sdb1磁碟做ext4格式化"><a href="#7-對sdb1磁碟做ext4格式化" class="headerlink" title="7. 對sdb1磁碟做ext4格式化"></a>7. 對sdb1磁碟做ext4格式化</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkfs -t ext4 /dev/sdb1</span><br></pre></td></tr></table></figure>
+<p><img src="image/7.JPG" alt="step7"></p>
+<h2 id="二、掛載磁碟-使用UUID掛載"><a href="#二、掛載磁碟-使用UUID掛載" class="headerlink" title="二、掛載磁碟(使用UUID掛載)"></a>二、掛載磁碟(使用UUID掛載)</h2><h3 id="1-列出所有磁碟的UUID"><a href="#1-列出所有磁碟的UUID" class="headerlink" title="1. 列出所有磁碟的UUID"></a>1. 列出所有磁碟的UUID<br></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo blkid</span><br></pre></td></tr></table></figure>
+<p><img src="image/9.JPG" alt="step7"><br></p>
+<h3 id="2-編輯fstab檔案，將要掛載硬碟的UDID填入，編輯後存檔重啟系統後就會自動掛載。"><a href="#2-編輯fstab檔案，將要掛載硬碟的UDID填入，編輯後存檔重啟系統後就會自動掛載。" class="headerlink" title="2. 編輯fstab檔案，將要掛載硬碟的UDID填入，編輯後存檔重啟系統後就會自動掛載。"></a>2. 編輯fstab檔案，將要掛載硬碟的UDID填入，編輯後存檔重啟系統後就會自動掛載。</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/fstab</span><br></pre></td></tr></table></figure>
+<p><img src="image/10.JPG" alt="step8"><br></p>
+<table>
+<thead>
+<tr>
+<th>fstab內容</th>
+<th>說明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>UUID</td>
+<td>填入需掛載磁碟的UUID</td>
+</tr>
+<tr>
+<td>/data</td>
+<td>將此磁碟掛載到/data的路徑</td>
+</tr>
+<tr>
+<td>ext4</td>
+<td>檔案系統類型</td>
+</tr>
+<tr>
+<td>defaults</td>
+<td>掛載時要使用的掛載參數</td>
+</tr>
+<tr>
+<td>第一個0</td>
+<td>dump 會根據這個設定決定是否需要備份，一般設定為 0, 即不備份；1 為每日備份；2 為隔日備份。</td>
+</tr>
+<tr>
+<td>第二個0</td>
+<td>fsck 會根據這個設定，決定在不正常關機後，檢查檔案系統的順序。根目錄要設定成 1, 其他分割區設定成 2, 如果設定成 0, 則不會作 fsck 檢查。</td>
+</tr>
+</tbody>
+</table>
+
                     
                         
 
