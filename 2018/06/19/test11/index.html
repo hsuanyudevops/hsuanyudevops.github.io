@@ -11,7 +11,7 @@
     
     
     
-    <script type="application/ld+json">{"@context":"http://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Hsuan","sameAs":[]},"articleBody":"一、新增磁碟\n1. 顯示目前主機上的硬碟1ls /dev/[sh]d*\n\n2. 確認所新增的硬碟資訊1fdisk -l /dev/sdb\n\n3. 對sdb磁碟進行分割，再輸入”m”獲得說明1fdisk /dev/sdb\n\n4. 輸入”n”新增分割區，再輸入”p” (硬碟全部只要一個分割區) \n5. 輸入”1”(磁碟代號)，按 Enter (起始磁區使用預設值)，在按 Enter (最後磁區使用預設值)\n6. 輸入”w” (將分割表寫入磁碟後離開)\n7. 對sdb1磁碟做ext4格式化1mkfs -t ext4 /dev/sdb1\n\n二、掛載磁碟(使用UUID掛載)1. 列出所有磁碟的UUID1sudo blkid\n\n2. 編輯fstab檔案，將要掛載硬碟的UDID填入，編輯後存檔重啟系統後就會自動掛載。1vim /etc/fstab\n\n\n\n\nfstab內容\n說明\n\n\n\n\nUUID\n填入需掛載磁碟的UUID\n\n\n/data\n將此磁碟掛載到/data的路徑\n\n\next4\n檔案系統類型\n\n\ndefaults\n掛載時要使用的掛載參數\n\n\n第一個0\ndump 會根據這個設定決定是否需要備份，一般設定為 0, 即不備份；1 為每日備份；2 為隔日備份。\n\n\n第二個0\nfsck 會根據這個設定，決定在不正常關機後，檢查檔案系統的順序。根目錄要設定成 1, 其他分割區設定成 2, 如果設定成 0, 則不會作 fsck 檢查。\n\n\n\n","dateCreated":"2018-06-19T14:47:50+08:00","dateModified":"2018-06-19T17:13:18+08:00","datePublished":"2018-06-19T14:47:50+08:00","description":"一、新增磁碟","headline":"Linux 新增、掛載硬碟","image":["55.jpg","city-750.jpg"],"mainEntityOfPage":{"@type":"WebPage","@id":"https://hsuanyudevops.github.io/2018/06/19/test11/"},"publisher":{"@type":"Organization","name":"Hsuan","sameAs":[]},"url":"https://hsuanyudevops.github.io/2018/06/19/test11/","thumbnailUrl":"55.jpg"}</script>
+    <script type="application/ld+json">{"@context":"http://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Hsuan","sameAs":[],"image":"55.jpg"},"articleBody":"一、新增磁碟\n1. 顯示目前主機上的硬碟1ls /dev/[sh]d*\n\n2. 確認所新增的硬碟資訊1fdisk -l /dev/sdb\n\n3. 對sdb磁碟進行分割，再輸入”m”獲得說明1fdisk /dev/sdb\n\n4. 輸入”n”新增分割區，再輸入”p” (硬碟全部只要一個分割區) \n5. 輸入”1”(磁碟代號)，按 Enter (起始磁區使用預設值)，在按 Enter (最後磁區使用預設值)\n6. 輸入”w” (將分割表寫入磁碟後離開)\n7. 對sdb1磁碟做ext4格式化1mkfs -t ext4 /dev/sdb1\n\n二、掛載磁碟(使用UUID掛載)1. 列出所有磁碟的UUID1sudo blkid\n\n2. 編輯fstab檔案，將要掛載硬碟的UDID填入，編輯後存檔重啟系統後就會自動掛載。1vim /etc/fstab\n\n\n\n\nfstab內容\n說明\n\n\n\n\nUUID\n填入需掛載磁碟的UUID\n\n\n/data\n將此磁碟掛載到/data的路徑\n\n\next4\n檔案系統類型\n\n\ndefaults\n掛載時要使用的掛載參數\n\n\n第一個0\ndump 會根據這個設定決定是否需要備份，一般設定為 0, 即不備份；1 為每日備份；2 為隔日備份。\n\n\n第二個0\nfsck 會根據這個設定，決定在不正常關機後，檢查檔案系統的順序。根目錄要設定成 1, 其他分割區設定成 2, 如果設定成 0, 則不會作 fsck 檢查。\n\n\n\n","dateCreated":"2018-06-19T14:47:50+08:00","dateModified":"2018-06-19T17:13:18+08:00","datePublished":"2018-06-19T14:47:50+08:00","description":"一、新增磁碟","headline":"Linux 新增、掛載硬碟","image":["55.jpg","city-750.jpg"],"mainEntityOfPage":{"@type":"WebPage","@id":"https://hsuanyudevops.github.io/2018/06/19/test11/"},"publisher":{"@type":"Organization","name":"Hsuan","sameAs":[],"image":"55.jpg","logo":{"@type":"ImageObject","url":"55.jpg"}},"url":"https://hsuanyudevops.github.io/2018/06/19/test11/","thumbnailUrl":"55.jpg"}</script>
     <meta name="description" content="一、新增磁碟">
 <meta property="og:type" content="blog">
 <meta property="og:title" content="Linux 新增、掛載硬碟">
@@ -38,6 +38,8 @@
         
     
     
+        <meta property="og:image" content="https://hsuanyudevops.github.io/assets/images/55.jpg"/>
+    
     
         <meta property="og:image" content="https://hsuanyudevops.github.io/2018/06/19/test11/55.jpg"/>
         <meta class="swiftype" name="image" data-type="enum" content="https://hsuanyudevops.github.io/2018/06/19/test11/55.jpg" />
@@ -61,6 +63,10 @@
 
 
     
+        
+            
+        
+    
 
 <header id="header" data-behavior="4">
     <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
@@ -73,6 +79,8 @@
                 href="#about">
         
         
+            <img class="header-picture" src="/assets/images/55.jpg" alt="Author&#39;s picture"/>
+        
         </a>
     
 </header>
@@ -80,8 +88,23 @@
             <!-- Define author's picture -->
 
 
+
+        
+    
+
 <nav id="sidebar" data-behavior="4">
     <div class="sidebar-container">
+        
+            <div class="sidebar-profile">
+                <a href="/#about">
+                    <img class="sidebar-profile-picture" src="/assets/images/55.jpg" alt="Author&#39;s picture"/>
+                </a>
+                <h4 class="sidebar-profile-name">Hsuan</h4>
+                
+                    <h5 class="sidebar-profile-bio"><p>RRR</p>
+</h5>
+                
+            </div>
         
         
             <ul class="sidebar-buttons">
@@ -478,25 +501,37 @@
         
 
 
+    
+        
+    
+
 <div id="about">
     <div id="about-card">
         <div id="about-btn-close">
             <i class="fa fa-remove"></i>
         </div>
         
+            <img id="about-card-picture" src="/assets/images/55.jpg" alt="Author&#39;s picture"/>
+        
             <h4 id="about-card-name">Hsuan</h4>
         
-            <div id="about-card-bio"><p>author.bio</p>
+            <div id="about-card-bio"><p>RRR</p>
 </div>
         
         
             <div id="about-card-job">
                 <i class="fa fa-briefcase"></i>
                 <br/>
-                <p>author.job</p>
+                <p>ttt</p>
 
             </div>
         
+        
+            <div id="about-card-location">
+                <i class="fa fa-map-marker"></i>
+                <br/>
+                China
+            </div>
         
     </div>
 </div>
