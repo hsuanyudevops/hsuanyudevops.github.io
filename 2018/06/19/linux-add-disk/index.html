@@ -5,18 +5,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="generator" content="Hsuan-note">
-    <title>Linux 新增、掛載硬碟 - Hsuan-note</title>
+    <meta name="generator" content="Hsuan-Note">
+    <title>Linux 新增、掛載硬碟 - Hsuan-Note</title>
     <meta name="author" content="Hsuan">
     
     
     
-    <script type="application/ld+json">{"@context":"http://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Hsuan","sameAs":[],"image":"IMG_1036.JPG"},"articleBody":"一、新增磁碟\n1. 顯示目前主機上的硬碟1ls /dev/[sh]d*\n\n2. 確認所新增的硬碟資訊1fdisk -l /dev/sdb\n\n3. 對sdb磁碟進行分割，再輸入”m”獲得說明1fdisk /dev/sdb\n\n4. 輸入”n”新增分割區，再輸入”p” (硬碟全部只要一個分割區) \n5. 輸入”1”(磁碟代號)，按 Enter (起始磁區使用預設值)，在按 Enter (最後磁區使用預設值)\n6. 輸入”w” (將分割表寫入磁碟後離開)\n7. 對sdb1磁碟做ext4格式化1mkfs -t ext4 /dev/sdb1\n\n二、掛載磁碟(使用UUID掛載)1. 列出所有磁碟的UUID1sudo blkid\n\n2. 編輯fstab檔案，將要掛載硬碟的UDID填入，編輯後存檔重啟系統後就會自動掛載。1vim /etc/fstab\n\n\n\n\nfstab內容\n說明\n\n\n\n\nUUID\n填入需掛載磁碟的UUID\n\n\n/data\n將此磁碟掛載到/data的路徑\n\n\next4\n檔案系統類型\n\n\ndefaults\n掛載時要使用的掛載參數\n\n\n第一個0\ndump 會根據這個設定決定是否需要備份，一般設定為 0, 即不備份；1 為每日備份；2 為隔日備份。\n\n\n第二個0\nfsck 會根據這個設定，決定在不正常關機後，檢查檔案系統的順序。根目錄要設定成 1, 其他分割區設定成 2, 如果設定成 0, 則不會作 fsck 檢查。\n\n\n\n","dateCreated":"2018-06-19T14:47:50+08:00","dateModified":"2018-06-20T18:09:25+08:00","datePublished":"2018-06-19T14:47:50+08:00","description":"一、新增磁碟","headline":"Linux 新增、掛載硬碟","image":["55.jpg","city-750.jpg"],"mainEntityOfPage":{"@type":"WebPage","@id":"https://hsuanyudevops.github.io/2018/06/19/linux-add-disk/"},"publisher":{"@type":"Organization","name":"Hsuan","sameAs":[],"image":"IMG_1036.JPG","logo":{"@type":"ImageObject","url":"IMG_1036.JPG"}},"url":"https://hsuanyudevops.github.io/2018/06/19/linux-add-disk/","thumbnailUrl":"55.jpg"}</script>
+    <script type="application/ld+json">{"@context":"http://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Hsuan","sameAs":[],"image":"IMG_1036.JPG"},"articleBody":"一、新增磁碟\n1. 顯示目前主機上的硬碟1ls /dev/[sh]d*\n\n2. 確認所新增的硬碟資訊1fdisk -l /dev/sdb\n\n3. 對sdb磁碟進行分割，再輸入”m”獲得說明1fdisk /dev/sdb\n\n4. 輸入”n”新增分割區，再輸入”p” (硬碟全部只要一個分割區) \n5. 輸入”1”(磁碟代號)，按 Enter (起始磁區使用預設值)，在按 Enter (最後磁區使用預設值)\n6. 輸入”w” (將分割表寫入磁碟後離開)\n7. 對sdb1磁碟做ext4格式化1mkfs -t ext4 /dev/sdb1\n\n二、掛載磁碟(使用UUID掛載)1. 列出所有磁碟的UUID1sudo blkid\n\n2. 編輯fstab檔案，將要掛載硬碟的UDID填入，編輯後存檔重啟系統後就會自動掛載。1vim /etc/fstab\n\n\n\n\nfstab內容\n說明\n\n\n\n\nUUID\n填入需掛載磁碟的UUID\n\n\n/data\n將此磁碟掛載到/data的路徑\n\n\next4\n檔案系統類型\n\n\ndefaults\n掛載時要使用的掛載參數\n\n\n第一個0\ndump 會根據這個設定決定是否需要備份，一般設定為 0, 即不備份；1 為每日備份；2 為隔日備份。\n\n\n第二個0\nfsck 會根據這個設定，決定在不正常關機後，檢查檔案系統的順序。根目錄要設定成 1, 其他分割區設定成 2, 如果設定成 0, 則不會作 fsck 檢查。\n\n\n\n","dateCreated":"2018-06-19T14:47:50+08:00","dateModified":"2018-06-20T18:25:13+08:00","datePublished":"2018-06-19T14:47:50+08:00","description":"一、新增磁碟","headline":"Linux 新增、掛載硬碟","image":["55.jpg","city-750.jpg"],"mainEntityOfPage":{"@type":"WebPage","@id":"https://hsuanyudevops.github.io/2018/06/19/linux-add-disk/"},"publisher":{"@type":"Organization","name":"Hsuan","sameAs":[],"image":"IMG_1036.JPG","logo":{"@type":"ImageObject","url":"IMG_1036.JPG"}},"url":"https://hsuanyudevops.github.io/2018/06/19/linux-add-disk/","thumbnailUrl":"55.jpg"}</script>
     <meta name="description" content="一、新增磁碟">
 <meta property="og:type" content="blog">
 <meta property="og:title" content="Linux 新增、掛載硬碟">
 <meta property="og:url" content="https://hsuanyudevops.github.io/2018/06/19/linux-add-disk/index.html">
-<meta property="og:site_name" content="Hsuan-note">
+<meta property="og:site_name" content="Hsuan-Note">
 <meta property="og:description" content="一、新增磁碟">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://hsuanyudevops.github.io/2018/06/19/linux-add-disk/1.JPG">
@@ -28,7 +28,7 @@
 <meta property="og:image" content="https://hsuanyudevops.github.io/2018/06/19/linux-add-disk/7.JPG">
 <meta property="og:image" content="https://hsuanyudevops.github.io/2018/06/19/linux-add-disk/9.JPG">
 <meta property="og:image" content="https://hsuanyudevops.github.io/2018/06/19/linux-add-disk/10.JPG">
-<meta property="og:updated_time" content="2018-06-20T10:09:25.421Z">
+<meta property="og:updated_time" content="2018-06-20T10:25:13.885Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linux 新增、掛載硬碟">
 <meta name="twitter:description" content="一、新增磁碟">
@@ -71,7 +71,7 @@
 <header id="header" data-behavior="4">
     <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
     <div class="header-title">
-        <a class="header-title-link" href="/ ">Hsuan-note</a>
+        <a class="header-title-link" href="/ ">Hsuan-Note</a>
     </div>
     
         
