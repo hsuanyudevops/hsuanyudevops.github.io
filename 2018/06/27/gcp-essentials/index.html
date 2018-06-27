@@ -6,33 +6,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="Hsuan-Note">
-    <title>Linux 新增、掛載硬碟 - Hsuan-Note</title>
+    <title>gcp-essentials - Hsuan-Note</title>
     <meta name="author" content="Hsuan">
     
     
     
-    <script type="application/ld+json">{"@context":"http://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Hsuan","sameAs":[],"image":"IMG_1036.JPG"},"articleBody":"一、新增磁碟\n1. 顯示目前主機上的硬碟1ls /dev/[sh]d*\n\n2. 確認所新增的硬碟資訊1fdisk -l /dev/sdb\n\n3. 對sdb磁碟進行分割，再輸入”m”獲得說明1fdisk /dev/sdb\n\n4. 輸入”n”新增分割區，再輸入”p” (硬碟全部只要一個分割區) \n5. 輸入”1”(磁碟代號)，按 Enter (起始磁區使用預設值)，在按 Enter (最後磁區使用預設值)\n6. 輸入”w” (將分割表寫入磁碟後離開)\n7. 對sdb1磁碟做ext4格式化1mkfs -t ext4 /dev/sdb1\n\n二、掛載磁碟(使用UUID掛載)1. 列出所有磁碟的UUID1sudo blkid\n\n2. 編輯fstab檔案，將要掛載硬碟的UDID填入，編輯後存檔重啟系統後就會自動掛載。1vim /etc/fstab\n\n\n\n\nfstab內容\n說明\n\n\n\n\nUUID\n填入需掛載磁碟的UUID\n\n\n/data\n將此磁碟掛載到/data的路徑\n\n\next4\n檔案系統類型\n\n\ndefaults\n掛載時要使用的掛載參數\n\n\n第一個0\ndump 會根據這個設定決定是否需要備份，一般設定為 0, 即不備份；1 為每日備份；2 為隔日備份。\n\n\n第二個0\nfsck 會根據這個設定，決定在不正常關機後，檢查檔案系統的順序。根目錄要設定成 1, 其他分割區設定成 2, 如果設定成 0, 則不會作 fsck 檢查。\n\n\n\n","dateCreated":"2018-06-19T14:47:50+08:00","dateModified":"2018-06-20T18:29:27+08:00","datePublished":"2018-06-19T14:47:50+08:00","description":"一、新增磁碟","headline":"Linux 新增、掛載硬碟","image":["https://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/NewTux.svg/1200px-NewTux.svg.png"],"mainEntityOfPage":{"@type":"WebPage","@id":"https://hsuanyudevops.github.io/2018/06/19/linux-add-disk/"},"publisher":{"@type":"Organization","name":"Hsuan","sameAs":[],"image":"IMG_1036.JPG","logo":{"@type":"ImageObject","url":"IMG_1036.JPG"}},"url":"https://hsuanyudevops.github.io/2018/06/19/linux-add-disk/","thumbnailUrl":"https://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/NewTux.svg/1200px-NewTux.svg.png"}</script>
-    <meta name="description" content="一、新增磁碟">
-<meta property="og:type" content="blog">
-<meta property="og:title" content="Linux 新增、掛載硬碟">
-<meta property="og:url" content="https://hsuanyudevops.github.io/2018/06/19/linux-add-disk/index.html">
+    <script type="application/ld+json">{"@context":"http://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Hsuan","sameAs":[],"image":"IMG_1036.JPG"},"articleBody":"","dateCreated":"2018-06-27T15:43:18+08:00","dateModified":"2018-06-27T15:44:36+08:00","datePublished":"2018-06-27T15:43:18+08:00","description":"","headline":"gcp-essentials","image":["https://s3.amazonaws.com/run-qwiklab-website-prod/badges/images/23/original/GCP_Essentials.png"],"mainEntityOfPage":{"@type":"WebPage","@id":"https://hsuanyudevops.github.io/2018/06/27/gcp-essentials/"},"publisher":{"@type":"Organization","name":"Hsuan","sameAs":[],"image":"IMG_1036.JPG","logo":{"@type":"ImageObject","url":"IMG_1036.JPG"}},"url":"https://hsuanyudevops.github.io/2018/06/27/gcp-essentials/","thumbnailUrl":"https://s3.amazonaws.com/run-qwiklab-website-prod/badges/images/23/original/GCP_Essentials.png"}</script>
+    <meta property="og:type" content="blog">
+<meta property="og:title" content="gcp-essentials">
+<meta property="og:url" content="https://hsuanyudevops.github.io/2018/06/27/gcp-essentials/index.html">
 <meta property="og:site_name" content="Hsuan-Note">
-<meta property="og:description" content="一、新增磁碟">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="https://hsuanyudevops.github.io/2018/06/19/linux-add-disk/1.JPG">
-<meta property="og:image" content="https://hsuanyudevops.github.io/2018/06/19/linux-add-disk/2.JPG">
-<meta property="og:image" content="https://hsuanyudevops.github.io/2018/06/19/linux-add-disk/3.JPG">
-<meta property="og:image" content="https://hsuanyudevops.github.io/2018/06/19/linux-add-disk/4.JPG">
-<meta property="og:image" content="https://hsuanyudevops.github.io/2018/06/19/linux-add-disk/5.JPG">
-<meta property="og:image" content="https://hsuanyudevops.github.io/2018/06/19/linux-add-disk/6.JPG">
-<meta property="og:image" content="https://hsuanyudevops.github.io/2018/06/19/linux-add-disk/7.JPG">
-<meta property="og:image" content="https://hsuanyudevops.github.io/2018/06/19/linux-add-disk/9.JPG">
-<meta property="og:image" content="https://hsuanyudevops.github.io/2018/06/19/linux-add-disk/10.JPG">
-<meta property="og:updated_time" content="2018-06-20T10:29:27.757Z">
+<meta property="og:updated_time" content="2018-06-27T07:44:36.009Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Linux 新增、掛載硬碟">
-<meta name="twitter:description" content="一、新增磁碟">
-<meta name="twitter:image" content="https://hsuanyudevops.github.io/2018/06/19/linux-add-disk/1.JPG">
+<meta name="twitter:title" content="gcp-essentials">
     
     
         
@@ -41,8 +28,8 @@
         <meta property="og:image" content="https://hsuanyudevops.github.io/assets/images/IMG_1036.JPG"/>
     
     
-        <meta property="og:image" content="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/NewTux.svg/1200px-NewTux.svg.png"/>
-        <meta class="swiftype" name="image" data-type="enum" content="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/NewTux.svg/1200px-NewTux.svg.png" />
+        <meta property="og:image" content="https://s3.amazonaws.com/run-qwiklab-website-prod/badges/images/23/original/GCP_Essentials.png"/>
+        <meta class="swiftype" name="image" data-type="enum" content="https://s3.amazonaws.com/run-qwiklab-website-prod/badges/images/23/original/GCP_Essentials.png" />
     
     
     
@@ -222,14 +209,14 @@
         <div class="post-header main-content-wrap text-left">
     
         <h1 class="post-title">
-            Linux 新增、掛載硬碟
+            gcp-essentials
         </h1>
     
     
         <div class="post-meta">
-    <time datetime="2018-06-19T14:47:50+08:00">
+    <time datetime="2018-06-27T15:43:18+08:00">
 	
-		    Jun 19, 2018
+		    Jun 27, 2018
     	
     </time>
     
@@ -241,57 +228,7 @@
     
     <div class="post-content markdown">
         <div class="main-content-wrap">
-            <h2 id="一、新增磁碟"><a href="#一、新增磁碟" class="headerlink" title="一、新增磁碟"></a>一、新增磁碟</h2><a id="more"></a>
-<h3 id="1-顯示目前主機上的硬碟"><a href="#1-顯示目前主機上的硬碟" class="headerlink" title="1. 顯示目前主機上的硬碟"></a>1. 顯示目前主機上的硬碟</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ls /dev/[sh]d*</span><br></pre></td></tr></table></figure>
-<img src="/2018/06/19/linux-add-disk/1.JPG" title="step1">
-<h3 id="2-確認所新增的硬碟資訊"><a href="#2-確認所新增的硬碟資訊" class="headerlink" title="2. 確認所新增的硬碟資訊"></a>2. 確認所新增的硬碟資訊<br></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fdisk -l /dev/sdb</span><br></pre></td></tr></table></figure>
-<img src="/2018/06/19/linux-add-disk/2.JPG" title="step2">
-<h3 id="3-對sdb磁碟進行分割，再輸入”m”獲得說明"><a href="#3-對sdb磁碟進行分割，再輸入”m”獲得說明" class="headerlink" title="3. 對sdb磁碟進行分割，再輸入”m”獲得說明"></a>3. 對sdb磁碟進行分割，再輸入”m”獲得說明<br></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fdisk /dev/sdb</span><br></pre></td></tr></table></figure>
-<img src="/2018/06/19/linux-add-disk/3.JPG" title="step3">
-<h3 id="4-輸入”n”新增分割區，再輸入”p”-硬碟全部只要一個分割區"><a href="#4-輸入”n”新增分割區，再輸入”p”-硬碟全部只要一個分割區" class="headerlink" title="4. 輸入”n”新增分割區，再輸入”p” (硬碟全部只要一個分割區) "></a>4. 輸入”n”新增分割區，再輸入”p” (硬碟全部只要一個分割區) <br></h3><img src="/2018/06/19/linux-add-disk/4.JPG" title="step4">
-<h3 id="5-輸入”1”-磁碟代號-，按-Enter-起始磁區使用預設值-，在按-Enter-最後磁區使用預設值"><a href="#5-輸入”1”-磁碟代號-，按-Enter-起始磁區使用預設值-，在按-Enter-最後磁區使用預設值" class="headerlink" title="5. 輸入”1”(磁碟代號)，按 Enter (起始磁區使用預設值)，在按 Enter (最後磁區使用預設值)"></a>5. 輸入”1”(磁碟代號)，按 Enter (起始磁區使用預設值)，在按 Enter (最後磁區使用預設值)<br></h3><img src="/2018/06/19/linux-add-disk/5.JPG" title="step5">
-<h3 id="6-輸入”w”-將分割表寫入磁碟後離開"><a href="#6-輸入”w”-將分割表寫入磁碟後離開" class="headerlink" title="6. 輸入”w” (將分割表寫入磁碟後離開)"></a>6. 輸入”w” (將分割表寫入磁碟後離開)<br></h3><img src="/2018/06/19/linux-add-disk/6.JPG" title="step6">
-<h3 id="7-對sdb1磁碟做ext4格式化"><a href="#7-對sdb1磁碟做ext4格式化" class="headerlink" title="7. 對sdb1磁碟做ext4格式化"></a>7. 對sdb1磁碟做ext4格式化</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkfs -t ext4 /dev/sdb1</span><br></pre></td></tr></table></figure>
-<img src="/2018/06/19/linux-add-disk/7.JPG" title="step7">
-<h2 id="二、掛載磁碟-使用UUID掛載"><a href="#二、掛載磁碟-使用UUID掛載" class="headerlink" title="二、掛載磁碟(使用UUID掛載)"></a>二、掛載磁碟(使用UUID掛載)</h2><h3 id="1-列出所有磁碟的UUID"><a href="#1-列出所有磁碟的UUID" class="headerlink" title="1. 列出所有磁碟的UUID"></a>1. 列出所有磁碟的UUID<br></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo blkid</span><br></pre></td></tr></table></figure>
-<img src="/2018/06/19/linux-add-disk/9.JPG" title="step9">
-<h3 id="2-編輯fstab檔案，將要掛載硬碟的UDID填入，編輯後存檔重啟系統後就會自動掛載。"><a href="#2-編輯fstab檔案，將要掛載硬碟的UDID填入，編輯後存檔重啟系統後就會自動掛載。" class="headerlink" title="2. 編輯fstab檔案，將要掛載硬碟的UDID填入，編輯後存檔重啟系統後就會自動掛載。"></a>2. 編輯fstab檔案，將要掛載硬碟的UDID填入，編輯後存檔重啟系統後就會自動掛載。</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/fstab</span><br></pre></td></tr></table></figure>
-<img src="/2018/06/19/linux-add-disk/10.JPG" title="step10">
-<table>
-<thead>
-<tr>
-<th>fstab內容</th>
-<th>說明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>UUID</td>
-<td>填入需掛載磁碟的UUID</td>
-</tr>
-<tr>
-<td>/data</td>
-<td>將此磁碟掛載到/data的路徑</td>
-</tr>
-<tr>
-<td>ext4</td>
-<td>檔案系統類型</td>
-</tr>
-<tr>
-<td>defaults</td>
-<td>掛載時要使用的掛載參數</td>
-</tr>
-<tr>
-<td>第一個0</td>
-<td>dump 會根據這個設定決定是否需要備份，一般設定為 0, 即不備份；1 為每日備份；2 為隔日備份。</td>
-</tr>
-<tr>
-<td>第二個0</td>
-<td>fsck 會根據這個設定，決定在不正常關機後，檢查檔案系統的順序。根目錄要設定成 1, 其他分割區設定成 2, 如果設定成 0, 則不會作 fsck 檢查。</td>
-</tr>
-</tbody>
-</table>
-
+            
             
 
         </div>
@@ -304,8 +241,7 @@
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2018/06/27/gcp-essentials/" data-tooltip="gcp-essentials" aria-label="PREVIOUS: gcp-essentials">
+                    <a class="post-action-btn btn btn--disabled">
                 
                     <i class="fa fa-angle-left" aria-hidden="true"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
@@ -314,7 +250,7 @@
             <li class="post-action">
                 
                     
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2018/06/19/hello-world/" data-tooltip="Hello World" aria-label="NEXT: Hello World">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2018/06/19/linux-add-disk/" data-tooltip="Linux 新增、掛載硬碟" aria-label="NEXT: Linux 新增、掛載硬碟">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
                     <i class="fa fa-angle-right" aria-hidden="true"></i>
@@ -332,7 +268,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://hsuanyudevops.github.io/2018/06/19/linux-add-disk/" title="Share on Facebook">
+                <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://hsuanyudevops.github.io/2018/06/27/gcp-essentials/" title="Share on Facebook">
                     <i class="fa fa-facebook-official" aria-hidden="true"></i>
                 </a>
             </li>
@@ -340,7 +276,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://hsuanyudevops.github.io/2018/06/19/linux-add-disk/" title="Share on Twitter">
+                <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://hsuanyudevops.github.io/2018/06/27/gcp-essentials/" title="Share on Twitter">
                     <i class="fa fa-twitter" aria-hidden="true"></i>
                 </a>
             </li>
@@ -348,7 +284,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://hsuanyudevops.github.io/2018/06/19/linux-add-disk/" title="Share on Google+">
+                <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://hsuanyudevops.github.io/2018/06/27/gcp-essentials/" title="Share on Google+">
                     <i class="fa fa-google-plus" aria-hidden="true"></i>
                 </a>
             </li>
@@ -390,8 +326,7 @@
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2018/06/27/gcp-essentials/" data-tooltip="gcp-essentials" aria-label="PREVIOUS: gcp-essentials">
+                    <a class="post-action-btn btn btn--disabled">
                 
                     <i class="fa fa-angle-left" aria-hidden="true"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
@@ -400,7 +335,7 @@
             <li class="post-action">
                 
                     
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2018/06/19/hello-world/" data-tooltip="Hello World" aria-label="NEXT: Hello World">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2018/06/19/linux-add-disk/" data-tooltip="Linux 新增、掛載硬碟" aria-label="NEXT: Linux 新增、掛載硬碟">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
                     <i class="fa fa-angle-right" aria-hidden="true"></i>
@@ -418,7 +353,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://hsuanyudevops.github.io/2018/06/19/linux-add-disk/" title="Share on Facebook">
+                <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://hsuanyudevops.github.io/2018/06/27/gcp-essentials/" title="Share on Facebook">
                     <i class="fa fa-facebook-official" aria-hidden="true"></i>
                 </a>
             </li>
@@ -426,7 +361,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://hsuanyudevops.github.io/2018/06/19/linux-add-disk/" title="Share on Twitter">
+                <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://hsuanyudevops.github.io/2018/06/27/gcp-essentials/" title="Share on Twitter">
                     <i class="fa fa-twitter" aria-hidden="true"></i>
                 </a>
             </li>
@@ -434,7 +369,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://hsuanyudevops.github.io/2018/06/19/linux-add-disk/" title="Share on Google+">
+                <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://hsuanyudevops.github.io/2018/06/27/gcp-essentials/" title="Share on Google+">
                     <i class="fa fa-google-plus" aria-hidden="true"></i>
                 </a>
             </li>
@@ -461,7 +396,7 @@
             
             
             <li class="share-option">
-                <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://hsuanyudevops.github.io/2018/06/19/linux-add-disk/">
+                <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://hsuanyudevops.github.io/2018/06/27/gcp-essentials/">
                     <i class="fa fa-facebook-official" aria-hidden="true"></i><span>Share on Facebook</span>
                 </a>
             </li>
@@ -469,7 +404,7 @@
             
             
             <li class="share-option">
-                <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https://hsuanyudevops.github.io/2018/06/19/linux-add-disk/">
+                <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https://hsuanyudevops.github.io/2018/06/27/gcp-essentials/">
                     <i class="fa fa-twitter" aria-hidden="true"></i><span>Share on Twitter</span>
                 </a>
             </li>
@@ -477,7 +412,7 @@
             
             
             <li class="share-option">
-                <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https://hsuanyudevops.github.io/2018/06/19/linux-add-disk/">
+                <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https://hsuanyudevops.github.io/2018/06/27/gcp-essentials/">
                     <i class="fa fa-google-plus" aria-hidden="true"></i><span>Share on Google+</span>
                 </a>
             </li>
