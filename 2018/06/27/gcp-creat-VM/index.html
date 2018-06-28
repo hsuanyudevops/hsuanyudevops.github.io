@@ -6,15 +6,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="Hsuan-Note">
-    <title>建立GCP-VM-UI - Hsuan-Note</title>
+    <title>建立GCP-VM(GUI) - Hsuan-Note</title>
     <meta name="author" content="Hsuan">
     
     
     
-    <script type="application/ld+json">{"@context":"http://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Hsuan","sameAs":[],"image":"IMG_1036.JPG"},"articleBody":"1. 進入GCP首頁:https://cloud.google.com/\n2. 登入後點擊畫面右上角控制台進入\n3. 建立新專案\n打上專案名稱後點擊建立\n4. 建立VM(1)導覽選單→(2)Compute Engine→(3)VM執行個體\n點擊建立VM\n輸入VM”名稱”後，按照需求可選擇建置在哪個”區域”下，”機器類型”可按照他的預設規格做選擇，也可以點擊”自訂”自行調正CPU核心數及記憶體大小，”開機磁碟”點擊變更可選擇Linux、Windows系統，以及開機磁碟的大小、磁碟類型(HDD，SSD)，”防火牆”的部分按照需求勾選允許HTTP、HTTPS流量。","dateCreated":"2018-06-27T15:43:18+08:00","dateModified":"2018-06-27T23:18:38+08:00","datePublished":"2018-06-27T15:43:18+08:00","description":"1. 進入GCP首頁:https://cloud.google.com/","headline":"建立GCP-VM-UI","image":["https://s3.amazonaws.com/run-qwiklab-website-prod/badges/images/23/original/GCP_Essentials.png"],"mainEntityOfPage":{"@type":"WebPage","@id":"https://hsuanyudevops.github.io/2018/06/27/gcp-creat-VM/"},"publisher":{"@type":"Organization","name":"Hsuan","sameAs":[],"image":"IMG_1036.JPG","logo":{"@type":"ImageObject","url":"IMG_1036.JPG"}},"url":"https://hsuanyudevops.github.io/2018/06/27/gcp-creat-VM/","thumbnailUrl":"https://s3.amazonaws.com/run-qwiklab-website-prod/badges/images/23/original/GCP_Essentials.png"}</script>
+    <script type="application/ld+json">{"@context":"http://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Hsuan","sameAs":[],"image":"IMG_1036.JPG"},"articleBody":"1. 進入GCP首頁:https://cloud.google.com/\n2. 登入後點擊畫面右上角控制台進入\n3. 建立新專案\n打上專案名稱後點擊建立\n4. 建立VM(1)導覽選單→(2)Compute Engine→(3)VM執行個體\n點擊建立VM\n輸入VM\"名稱\"後，按照需求可選擇建置在哪個\"區域\"下，\"機器類型\"可按照他的預設規格做選擇，也可以點擊\"自訂\"自行調正CPU核心數及記憶體大小，\"開機磁碟\"點擊變更可選擇Linux、Windows系統，以及開機磁碟的大小、磁碟類型(HDD，SSD)，\"防火牆\"的部分按照需求勾選允許HTTP、HTTPS流量。\n\n在\"磁碟\"下方點選”新增項目”新增資料碟\n在\"網路\"欄位下方展開網路介面的選項，若內外有需要使用靜態IP，在主要內部IP選單選擇”預約靜態IP”，在外部IP選單選擇”建立IP位址”，若沒有此需求，使用臨時即可。\n完成以上設定後至頁面最下方點選”建立”即可完成VM建置關於GCP計費說明可參考官網:https://cloud.google.com/compute/pricing#internet_egress費用估算可參考:https://cloud.google.com/products/calculator/\n","dateCreated":"2018-06-27T15:43:18+08:00","dateModified":"2018-06-28T18:53:16+08:00","datePublished":"2018-06-27T15:43:18+08:00","description":"1. 進入GCP首頁:https://cloud.google.com/","headline":"建立GCP-VM(GUI)","image":["https://s3.amazonaws.com/run-qwiklab-website-prod/badges/images/23/original/GCP_Essentials.png"],"mainEntityOfPage":{"@type":"WebPage","@id":"https://hsuanyudevops.github.io/2018/06/27/gcp-creat-VM/"},"publisher":{"@type":"Organization","name":"Hsuan","sameAs":[],"image":"IMG_1036.JPG","logo":{"@type":"ImageObject","url":"IMG_1036.JPG"}},"url":"https://hsuanyudevops.github.io/2018/06/27/gcp-creat-VM/","thumbnailUrl":"https://s3.amazonaws.com/run-qwiklab-website-prod/badges/images/23/original/GCP_Essentials.png"}</script>
     <meta name="description" content="1. 進入GCP首頁:https://cloud.google.com/">
 <meta property="og:type" content="blog">
-<meta property="og:title" content="建立GCP-VM-UI">
+<meta property="og:title" content="建立GCP-VM(GUI)">
 <meta property="og:url" content="https://hsuanyudevops.github.io/2018/06/27/gcp-creat-VM/index.html">
 <meta property="og:site_name" content="Hsuan-Note">
 <meta property="og:description" content="1. 進入GCP首頁:https://cloud.google.com/">
@@ -25,9 +25,11 @@
 <meta property="og:image" content="https://hsuanyudevops.github.io/2018/06/27/gcp-creat-VM/4.png">
 <meta property="og:image" content="https://hsuanyudevops.github.io/2018/06/27/gcp-creat-VM/5.png">
 <meta property="og:image" content="https://hsuanyudevops.github.io/2018/06/27/gcp-creat-VM/6.png">
-<meta property="og:updated_time" content="2018-06-27T15:18:38.260Z">
+<meta property="og:image" content="https://hsuanyudevops.github.io/2018/06/27/gcp-creat-VM/7.png">
+<meta property="og:image" content="https://hsuanyudevops.github.io/2018/06/27/gcp-creat-VM/8.png">
+<meta property="og:updated_time" content="2018-06-28T10:53:16.563Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="建立GCP-VM-UI">
+<meta name="twitter:title" content="建立GCP-VM(GUI)">
 <meta name="twitter:description" content="1. 進入GCP首頁:https://cloud.google.com/">
 <meta name="twitter:image" content="https://hsuanyudevops.github.io/2018/06/27/gcp-creat-VM/1.png">
     
@@ -219,7 +221,7 @@
         <div class="post-header main-content-wrap text-left">
     
         <h1 class="post-title">
-            建立GCP-VM-UI
+            建立GCP-VM(GUI)
         </h1>
     
     
@@ -244,7 +246,12 @@
 <h4 id="打上專案名稱後點擊建立"><a href="#打上專案名稱後點擊建立" class="headerlink" title="打上專案名稱後點擊建立"></a>打上專案名稱後點擊建立</h4><img src="/2018/06/27/gcp-creat-VM/3.png" title="step2">
 <h2 id="4-建立VM"><a href="#4-建立VM" class="headerlink" title="4. 建立VM"></a>4. 建立VM</h2><h4 id="1-導覽選單→-2-Compute-Engine→-3-VM執行個體"><a href="#1-導覽選單→-2-Compute-Engine→-3-VM執行個體" class="headerlink" title="(1)導覽選單→(2)Compute Engine→(3)VM執行個體"></a>(1)導覽選單→(2)Compute Engine→(3)VM執行個體</h4><img src="/2018/06/27/gcp-creat-VM/4.png" title="step2">
 <h4 id="點擊建立VM"><a href="#點擊建立VM" class="headerlink" title="點擊建立VM"></a>點擊建立VM</h4><img src="/2018/06/27/gcp-creat-VM/5.png" title="step2">
-<h4 id="輸入VM”名稱”後，按照需求可選擇建置在哪個”區域”下，”機器類型”可按照他的預設規格做選擇，也可以點擊”自訂”自行調正CPU核心數及記憶體大小，”開機磁碟”點擊變更可選擇Linux、Windows系統，以及開機磁碟的大小、磁碟類型-HDD，SSD-，”防火牆”的部分按照需求勾選允許HTTP、HTTPS流量。"><a href="#輸入VM”名稱”後，按照需求可選擇建置在哪個”區域”下，”機器類型”可按照他的預設規格做選擇，也可以點擊”自訂”自行調正CPU核心數及記憶體大小，”開機磁碟”點擊變更可選擇Linux、Windows系統，以及開機磁碟的大小、磁碟類型-HDD，SSD-，”防火牆”的部分按照需求勾選允許HTTP、HTTPS流量。" class="headerlink" title="輸入VM”名稱”後，按照需求可選擇建置在哪個”區域”下，”機器類型”可按照他的預設規格做選擇，也可以點擊”自訂”自行調正CPU核心數及記憶體大小，”開機磁碟”點擊變更可選擇Linux、Windows系統，以及開機磁碟的大小、磁碟類型(HDD，SSD)，”防火牆”的部分按照需求勾選允許HTTP、HTTPS流量。"></a>輸入VM”名稱”後，按照需求可選擇建置在哪個”區域”下，”機器類型”可按照他的預設規格做選擇，也可以點擊”自訂”自行調正CPU核心數及記憶體大小，”開機磁碟”點擊變更可選擇Linux、Windows系統，以及開機磁碟的大小、磁碟類型(HDD，SSD)，”防火牆”的部分按照需求勾選允許HTTP、HTTPS流量。</h4><img src="/2018/06/27/gcp-creat-VM/6.png" title="step2">
+<h4 id="輸入VM下方點選”新增項目”新增資料碟"><a href="#輸入VM下方點選”新增項目”新增資料碟" class="headerlink" title="輸入VM下方點選”新增項目”新增資料碟"></a>輸入VM<span class="highlight-text danger">"名稱"</span>後，按照需求可選擇建置在哪個<span class="highlight-text danger">"區域"</span>下，<span class="highlight-text danger">"機器類型"</span>可按照他的預設規格做選擇，也可以點擊"自訂"自行調正CPU核心數及記憶體大小，"<span class="highlight-text danger">開機磁碟"</span>點擊變更可選擇Linux、Windows系統，以及開機磁碟的大小、磁碟類型(HDD，SSD)，<span class="highlight-text danger">"防火牆"</span>的部分按照需求勾選允許HTTP、HTTPS流量。
+<img src="/2018/06/27/gcp-creat-VM/6.png" title="step2">
+在<span class="highlight-text danger">"磁碟"</span>下方點選”新增項目”新增資料碟</h4><img src="/2018/06/27/gcp-creat-VM/7.png" title="step2">
+<h4 id="在欄位下方展開網路介面的選項，若內外有需要使用靜態IP，在主要內部IP選單選擇”預約靜態IP”，在外部IP選單選擇”建立IP位址”，若沒有此需求，使用臨時即可。"><a href="#在欄位下方展開網路介面的選項，若內外有需要使用靜態IP，在主要內部IP選單選擇”預約靜態IP”，在外部IP選單選擇”建立IP位址”，若沒有此需求，使用臨時即可。" class="headerlink" title="在欄位下方展開網路介面的選項，若內外有需要使用靜態IP，在主要內部IP選單選擇”預約靜態IP”，在外部IP選單選擇”建立IP位址”，若沒有此需求，使用臨時即可。"></a>在<span class="highlight-text danger">"網路"</span>欄位下方展開網路介面的選項，若內外有需要使用靜態IP，在主要內部IP選單選擇”預約靜態IP”，在外部IP選單選擇”建立IP位址”，若沒有此需求，使用臨時即可。</h4><img src="/2018/06/27/gcp-creat-VM/8.png" title="step2">
+<h3 id="完成以上設定後至頁面最下方點選”建立”即可完成VM建置"><a href="#完成以上設定後至頁面最下方點選”建立”即可完成VM建置" class="headerlink" title="完成以上設定後至頁面最下方點選”建立”即可完成VM建置"></a>完成以上設定後至頁面最下方點選”建立”即可完成VM建置</h3><p>關於GCP計費說明可參考官網:<a href="https://cloud.google.com/compute/pricing#internet_egress" target="_blank" rel="noopener">https://cloud.google.com/compute/pricing#internet_egress</a><br>費用估算可參考:<a href="https://cloud.google.com/products/calculator/" target="_blank" rel="noopener">https://cloud.google.com/products/calculator/</a></p>
+
             
 
         </div>
